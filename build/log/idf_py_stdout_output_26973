@@ -1,0 +1,73 @@
+Command: ninja flash
+[1/5] cd /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/esptool_py && /home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/grigoriew/Applications/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/grigoriew/Programs/esp32_dev/oled_clock/build/partition_table/partition-table.bin /home/grigoriew/Programs/esp32_dev/oled_clock/build/oled_clock.bin
+oled_clock.bin binary size 0xc3aa0 bytes. Smallest app partition is 0x100000 bytes. 0x3c560 bytes (24%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/esp-idf/esptool_py && /home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/grigoriew/Applications/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/bootloader.bin
+Bootloader binary size 0x6600 bytes. 0xa00 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/grigoriew/Applications/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/grigoriew/Applications/esp/esp-idf -D "SERIAL_TOOL=/home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python;;/home/grigoriew/Applications/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/grigoriew/Programs/esp32_dev/oled_clock/build -P /home/grigoriew/Applications/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 oled_clock.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.dev3
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 14:2b:2f:c9:2a:e0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000d3fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26112 bytes to 16490...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000756b... (100 %)
+Wrote 26112 bytes (16490 compressed) at 0x00001000 in 0.8 seconds (effective 275.6 kbit/s)...
+Hash of data verified.
+Compressed 801440 bytes to 504887...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001ccb7... (6 %)
+Writing at 0x000259ca... (9 %)
+Writing at 0x00030c34... (12 %)
+Writing at 0x000364c0... (16 %)
+Writing at 0x0003c6cf... (19 %)
+Writing at 0x000421a4... (22 %)
+Writing at 0x00047b20... (25 %)
+Writing at 0x0004d77b... (29 %)
+Writing at 0x00053219... (32 %)
+Writing at 0x0005910e... (35 %)
+Writing at 0x0005f16d... (38 %)
+Writing at 0x0006533b... (41 %)
+Writing at 0x0006ab26... (45 %)
+Writing at 0x0006fdb4... (48 %)
+Writing at 0x000752f9... (51 %)
+Writing at 0x0007a5c9... (54 %)
+Writing at 0x0007fd11... (58 %)
+Writing at 0x00085383... (61 %)
+Writing at 0x0008aef5... (64 %)
+Writing at 0x000907ac... (67 %)
+Writing at 0x000962e2... (70 %)
+Writing at 0x0009c05d... (74 %)
+Writing at 0x000a196d... (77 %)
+Writing at 0x000a763c... (80 %)
+Writing at 0x000b0e3f... (83 %)
+Writing at 0x000b7e69... (87 %)
+Writing at 0x000bddf3... (90 %)
+Writing at 0x000c393e... (93 %)
+Writing at 0x000c9a65... (96 %)
+Writing at 0x000cf1a4... (100 %)
+Wrote 801440 bytes (504887 compressed) at 0x00010000 in 11.8 seconds (effective 542.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 475.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

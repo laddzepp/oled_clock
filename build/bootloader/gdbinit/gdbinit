@@ -1,0 +1,2 @@
+source /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/gdbinit/symbols
+source /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/gdbinit/connect

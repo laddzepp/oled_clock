@@ -1,0 +1,24 @@
+Command: ninja all
+[1/11] Performing build step for 'bootloader'
+[1/1] cd /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/esp-idf/esptool_py && /home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/grigoriew/Applications/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/bootloader.bin
+Bootloader binary size 0x6600 bytes. 0xa00 bytes (9%) free.
+[2/11] No install step for 'bootloader'
+[3/11] Building C object esp-idf/display_control/CMakeFiles/__idf_display_control.dir/display_control.c.obj
+In file included from /home/grigoriew/Programs/esp32_dev/oled_clock/components/display_control/display_control.c:2:
+/home/grigoriew/Programs/esp32_dev/oled_clock/components/ssd1306/font8x8_basic.h:41:16: warning: 'font8x8_basic_tr' defined but not used [-Wunused-variable]
+   41 | static uint8_t font8x8_basic_tr[128][8] = {
+      |                ^~~~~~~~~~~~~~~~
+[4/11] Completed 'bootloader'
+[5/11] Linking C static library esp-idf/display_control/libdisplay_control.a
+[6/11] Linking C static library esp-idf/main/libmain.a
+[7/11] Generating ld/sections.ld
+[8/11] Building C object CMakeFiles/oled_clock.elf.dir/project_elf_src_esp32.c.obj
+[9/11] Linking CXX executable oled_clock.elf
+[10/11] Generating binary image from built executable
+esptool.py v4.9.dev3
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/grigoriew/Programs/esp32_dev/oled_clock/build/oled_clock.bin
+[11/11] cd /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/esptool_py && /home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/grigoriew/Applications/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/grigoriew/Programs/esp32_dev/oled_clock/build/partition_table/partition-table.bin /home/grigoriew/Programs/esp32_dev/oled_clock/build/oled_clock.bin
+oled_clock.bin binary size 0xbc670 bytes. Smallest app partition is 0x100000 bytes. 0x43990 bytes (26%) free.
