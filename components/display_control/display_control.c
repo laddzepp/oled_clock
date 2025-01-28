@@ -1,12 +1,18 @@
 #include "ssd1306.h"
 #include "font8x8_basic.h"
+#include "timesync.h"
 #include "esp_log.h"
+#include <time.h>
+#include <string.h>
 #define DISPLAY_TAG "DISPLAY"
 
 
+SSD1306_t dev;
+
 void init_oled_display(void)
 { 
-        SSD1306_t dev;
+        
+        int center, bottom, top;
 
         #if CONFIG_I2C_INTERFACE
 	   ESP_LOGI(DISPLAY_TAG, "INTERFACE is i2c");
@@ -18,12 +24,31 @@ void init_oled_display(void)
 
 
         #if CONFIG_SSD1306_128x64
+           top = 2;
+           center = 3;
+           bottom = 8;
            ESP_LOGI(DISPLAY_TAG, "Panel is 128x64");
            ssd1306_init(&dev, 128, 64);
         #endif // CONFIG_SSD1306_128x64
 
         ssd1306_clear_screen(&dev, false);
-	ssd1306_contrast(&dev, 0xff);
-        ssd1306_display_text(&dev, 1, "Hello", 5, false);
+	ssd1306_contrast(&dev, 0xff);        
+}
 
+void update_time(void)
+{
+        struct tm curtime = get_time();
+        char time[6];
+        char month[18];
+        char weekday[4];
+        char year[5];
+        
+        strftime(time, sizeof(time), "%H:%M", &curtime);
+        ssd1306_display_text_box1(&dev, 2, 20, time, 6, sizeof(time), false, 0);
+        strftime(month, sizeof(month), "%d %B", &curtime);
+        ssd1306_display_text_box1(&dev, 5, 20, month, strlen(month), strlen(month), false, 0);
+        strftime(weekday, sizeof(weekday), "%a", &curtime);
+        ssd1306_display_text_box1(&dev, 7, 20, weekday, strlen(weekday), strlen(weekday), false, 0);
+        strftime(year, sizeof(year), "%Y", &curtime);
+        ssd1306_display_text_box1(&dev, 7, 60, year, strlen(year),strlen(year), false, 0);
 }

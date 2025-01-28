@@ -3,9 +3,9 @@
 #include "esp_sntp.h"
 #include "esp_log.h"
 #define TIME_TAG "TIME"
-#define SNTP_SERVER "pool.ntp.org"
+#define NTP_SERVER "pool.ntp.org"
 
-void get_time(void)
+struct tm get_time(void)
 {
         vTaskDelay(10000 / portTICK_PERIOD_MS);
         time_t now;
@@ -15,20 +15,12 @@ void get_time(void)
         struct tm current_msk_time;
         time(&now);
         localtime_r(&now, &current_msk_time);
-
-        char time[20];
-        if (current_msk_time.tm_min < 0) {
-                sprintf(time, "%d:0%d", current_msk_time.tm_hour, current_msk_time.tm_min);
-                ESP_LOGI(TIME_TAG, "%s", time);
-        }
-
-        sprintf(time, "%d:%d", current_msk_time.tm_hour, current_msk_time.tm_min);
-        ESP_LOGI(TIME_TAG, "%s", time);
+        return current_msk_time; 
 }
 
 void start_sntp(void)
 {
         sntp_setoperatingmode(SNTP_OPMODE_POLL);
-        sntp_setservername(0, SNTP_SERVER);
+        sntp_setservername(0, NTP_SERVER);
         sntp_init();
 }

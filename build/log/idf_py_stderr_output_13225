@@ -1,0 +1,11 @@
+Command: ninja flash
+CMake Error at /home/grigoriew/Applications/esp/esp-idf/tools/cmake/component.cmake:318 (message):
+  Include directory
+  '/home/grigoriew/Programs/esp32_dev/oled_clock/components/timesync/PREV_REQUIRES'
+  is not a directory.
+Call Stack (most recent call first):
+  /home/grigoriew/Applications/esp/esp-idf/tools/cmake/component.cmake:493 (__component_add_include_dirs)
+  components/timesync/CMakeLists.txt:2 (idf_component_register)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

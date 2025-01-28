@@ -8,6 +8,9 @@ void app_main(void)
 {
         wifi_start();
         start_sntp();
-        get_time();
 	init_oled_display();
+        
+        while (1) { 
+                update_time();
+        }
 }

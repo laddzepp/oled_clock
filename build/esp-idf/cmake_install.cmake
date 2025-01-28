@@ -564,12 +564,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/cmake_install.cmake")
+  include("/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/cmake_install.cmake")
+  include("/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

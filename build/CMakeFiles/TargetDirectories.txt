@@ -844,13 +844,6 @@
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/ssd1306/CMakeFiles/install.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/ssd1306/CMakeFiles/install/local.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/ssd1306/CMakeFiles/install/strip.dir
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/__idf_display_control.dir
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/edit_cache.dir
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/rebuild_cache.dir
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/list_install_components.dir
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/install.dir
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/install/local.dir
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/install/strip.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/CMakeFiles/__idf_timesync.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/CMakeFiles/edit_cache.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/CMakeFiles/rebuild_cache.dir
@@ -858,6 +851,13 @@
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/CMakeFiles/install.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/CMakeFiles/install/local.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/CMakeFiles/install/strip.dir
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/__idf_display_control.dir
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/edit_cache.dir
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/rebuild_cache.dir
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/list_install_components.dir
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/install.dir
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/install/local.dir
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/CMakeFiles/install/strip.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/wifi_connect/CMakeFiles/__idf_wifi_connect.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/wifi_connect/CMakeFiles/edit_cache.dir
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/wifi_connect/CMakeFiles/rebuild_cache.dir

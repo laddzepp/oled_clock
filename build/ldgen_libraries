@@ -83,6 +83,6 @@
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/main/libmain.a
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/ssd1306/libssd1306.a
-/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/libdisplay_control.a
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/timesync/libtimesync.a
+/home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/display_control/libdisplay_control.a
 /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/wifi_connect/libwifi_connect.a

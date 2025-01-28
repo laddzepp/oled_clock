@@ -83,6 +83,6 @@ $<TARGET_FILE:__idf_spiffs>
 $<TARGET_FILE:__idf_wifi_provisioning>
 $<TARGET_FILE:__idf_main>
 $<TARGET_FILE:__idf_ssd1306>
-$<TARGET_FILE:__idf_display_control>
 $<TARGET_FILE:__idf_timesync>
+$<TARGET_FILE:__idf_display_control>
 $<TARGET_FILE:__idf_wifi_connect>

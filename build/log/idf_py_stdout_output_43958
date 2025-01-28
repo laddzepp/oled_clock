@@ -1,0 +1,99 @@
+Command: ninja flash
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/esp-idf/esptool_py && /home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/grigoriew/Applications/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/grigoriew/Programs/esp32_dev/oled_clock/build/bootloader/bootloader.bin
+Bootloader binary size 0x6600 bytes. 0xa00 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Building C object esp-idf/display_control/CMakeFiles/__idf_display_control.dir/display_control.c.obj
+/home/grigoriew/Programs/esp32_dev/oled_clock/components/display_control/display_control.c: In function 'init_oled_display':
+/home/grigoriew/Programs/esp32_dev/oled_clock/components/display_control/display_control.c:15:29: warning: variable 'top' set but not used [-Wunused-but-set-variable]
+   15 |         int center, bottom, top;
+      |                             ^~~
+/home/grigoriew/Programs/esp32_dev/oled_clock/components/display_control/display_control.c:15:21: warning: variable 'bottom' set but not used [-Wunused-but-set-variable]
+   15 |         int center, bottom, top;
+      |                     ^~~~~~
+/home/grigoriew/Programs/esp32_dev/oled_clock/components/display_control/display_control.c:15:13: warning: variable 'center' set but not used [-Wunused-but-set-variable]
+   15 |         int center, bottom, top;
+      |             ^~~~~~
+In file included from /home/grigoriew/Programs/esp32_dev/oled_clock/components/display_control/display_control.c:2:
+/home/grigoriew/Programs/esp32_dev/oled_clock/components/ssd1306/font8x8_basic.h: At top level:
+/home/grigoriew/Programs/esp32_dev/oled_clock/components/ssd1306/font8x8_basic.h:41:16: warning: 'font8x8_basic_tr' defined but not used [-Wunused-variable]
+   41 | static uint8_t font8x8_basic_tr[128][8] = {
+      |                ^~~~~~~~~~~~~~~~
+[4/10] Linking C static library esp-idf/display_control/libdisplay_control.a
+[5/10] Completed 'bootloader'
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable oled_clock.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.9.dev3
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/grigoriew/Programs/esp32_dev/oled_clock/build/oled_clock.bin
+[9/10] cd /home/grigoriew/Programs/esp32_dev/oled_clock/build/esp-idf/esptool_py && /home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/grigoriew/Applications/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/grigoriew/Programs/esp32_dev/oled_clock/build/partition_table/partition-table.bin /home/grigoriew/Programs/esp32_dev/oled_clock/build/oled_clock.bin
+oled_clock.bin binary size 0xc5550 bytes. Smallest app partition is 0x100000 bytes. 0x3aab0 bytes (23%) free.
+[9/10] cd /home/grigoriew/Applications/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/grigoriew/Applications/esp/esp-idf -D "SERIAL_TOOL=/home/grigoriew/.espressif/python_env/idf5.5_py3.11_env/bin/python;;/home/grigoriew/Applications/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/grigoriew/Programs/esp32_dev/oled_clock/build -P /home/grigoriew/Applications/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 oled_clock.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.dev3
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 14:2b:2f:c9:2a:e0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000d5fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26112 bytes to 16490...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000756b... (100 %)
+Wrote 26112 bytes (16490 compressed) at 0x00001000 in 0.8 seconds (effective 277.1 kbit/s)...
+Hash of data verified.
+Compressed 808272 bytes to 509848...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001ccc9... (6 %)
+Writing at 0x000258f9... (9 %)
+Writing at 0x00030de6... (12 %)
+Writing at 0x00036655... (15 %)
+Writing at 0x0003c832... (18 %)
+Writing at 0x00042355... (21 %)
+Writing at 0x00047cc9... (25 %)
+Writing at 0x0004d88c... (28 %)
+Writing at 0x0005338e... (31 %)
+Writing at 0x00059338... (34 %)
+Writing at 0x0005f308... (37 %)
+Writing at 0x00064f75... (40 %)
+Writing at 0x0006ad66... (43 %)
+Writing at 0x0006fff3... (46 %)
+Writing at 0x00075522... (50 %)
+Writing at 0x0007a77b... (53 %)
+Writing at 0x0007ff53... (56 %)
+Writing at 0x00085587... (59 %)
+Writing at 0x0008b0ec... (62 %)
+Writing at 0x000909b5... (65 %)
+Writing at 0x000964bb... (68 %)
+Writing at 0x0009c1c0... (71 %)
+Writing at 0x000a1bde... (75 %)
+Writing at 0x000a722c... (78 %)
+Writing at 0x000b16cd... (81 %)
+Writing at 0x000b8051... (84 %)
+Writing at 0x000bdd2e... (87 %)
+Writing at 0x000c3903... (90 %)
+Writing at 0x000c94fd... (93 %)
+Writing at 0x000cf316... (96 %)
+Writing at 0x000d46df... (100 %)
+Wrote 808272 bytes (509848 compressed) at 0x00010000 in 12.0 seconds (effective 539.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 477.9 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
