@@ -35,20 +35,40 @@ void init_oled_display(void)
 	ssd1306_contrast(&dev, 0xff);        
 }
 
+void get_current_time(struct tm *curtime)
+{
+        char time[6];
+        strftime(time, sizeof(time), "%H:%M", curtime);
+        ssd1306_display_text_box1(&dev, 2, 20, time, 6, sizeof(time), false, 0);
+}
+
+void get_current_month(struct tm *curtime)
+{
+        char month[18];
+        strftime(month, sizeof(month), "%d %B", curtime);
+        ssd1306_display_text_box1(&dev, 5, 20, month, strlen(month), strlen(month), false, 0);
+}
+
+void get_current_weekday(struct tm *curtime)
+{
+        char weekday[4];
+        strftime(weekday, sizeof(weekday), "%a", curtime);
+        ssd1306_display_text_box1(&dev, 7, 20, weekday, strlen(weekday), strlen(weekday), false, 0);
+}
+
+void get_current_year(struct tm *curtime)
+{
+        char year[5];
+        strftime(year, sizeof(year), "%Y", curtime);
+        ssd1306_display_text_box1(&dev, 7, 60, year, strlen(year),strlen(year), false, 0);
+}
+
+
 void update_time(void)
 {
         struct tm curtime = get_time();
-        char time[6];
-        char month[18];
-        char weekday[4];
-        char year[5];
-        
-        strftime(time, sizeof(time), "%H:%M", &curtime);
-        ssd1306_display_text_box1(&dev, 2, 20, time, 6, sizeof(time), false, 0);
-        strftime(month, sizeof(month), "%d %B", &curtime);
-        ssd1306_display_text_box1(&dev, 5, 20, month, strlen(month), strlen(month), false, 0);
-        strftime(weekday, sizeof(weekday), "%a", &curtime);
-        ssd1306_display_text_box1(&dev, 7, 20, weekday, strlen(weekday), strlen(weekday), false, 0);
-        strftime(year, sizeof(year), "%Y", &curtime);
-        ssd1306_display_text_box1(&dev, 7, 60, year, strlen(year),strlen(year), false, 0);
+        get_current_time(&curtime);
+        get_current_month(&curtime);
+        get_current_weekday(&curtime);
+        get_current_year(&curtime);
 }
