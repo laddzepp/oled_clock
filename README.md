@@ -5,7 +5,7 @@
 
 Компоненты проекта: 
 - Контроллер ESP32 CH340C TYPE-C USB
-- OLED дисплей (128x64)
+- OLED дисплей (128x64, I2C)
 
 Время на контроллере:\
 ![1738221764197](https://github.com/user-attachments/assets/1da99aac-a3d8-480b-a218-f063d90a40ae)
