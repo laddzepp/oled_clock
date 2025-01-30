@@ -6,8 +6,7 @@
 #define NTP_SERVER "pool.ntp.org"
 
 struct tm get_time(void)
-{
-        vTaskDelay(10000 / portTICK_PERIOD_MS);
+{    
         time_t now;
         setenv("TZ", "MSK-3", 1);
         tzset();
@@ -23,4 +22,5 @@ void start_sntp(void)
         sntp_setoperatingmode(SNTP_OPMODE_POLL);
         sntp_setservername(0, NTP_SERVER);
         sntp_init();
+        vTaskDelay(10000 / portTICK_PERIOD_MS);
 }
